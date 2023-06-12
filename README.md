@@ -1,2 +1,2 @@
 # portfolio
-Portfolio with svelte
+Portfolio with reactJS
