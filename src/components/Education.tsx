@@ -24,13 +24,13 @@ export default function Education() {
             <div>
                 <h1 className="text-slate-100 text-4xl text-center py-1">Education</h1>
             </div>
-            <div className='grid flex items-left gap-4'>
+            <div className='grid place-content-center gap-2'>
                 {data.map((item, index) => {
                     return (
-                        <div key={index} className='bg-slate-900 p-4 inline'>
-                            <h1 className="text-slate-100 text-xl">{item.institution}</h1>
-                            <p className="text-slate-200 text-md">{item.degree}</p>
-                            <p className="text-slate-500 text-sm">{item.year}</p>
+                        <div key={index} className="text-white text-center text-md p-4 bg-slate-900 container rounded-full">
+                            <h1 className="text-slate-400 text-2xl">{item.institution}</h1>
+                            <h2 className="text-slate-400 text-xl">{item.degree}</h2>
+                            <h3 className="text-slate-400 text-lg">{item.year}</h3>
                         </div>
                     )
                 })}

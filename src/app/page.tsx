@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <section className="py-8">
-        <div className="flex justify-center rounded-full items-center">
+        <div className="flex justify-center items-center">
           <Image
             src="/Alvin.png"
             width={200}
