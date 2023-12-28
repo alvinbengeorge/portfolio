@@ -1,8 +1,12 @@
 import NavBar from '../components/NavBar'
-import { Inter } from 'next/font/google'
+import { Comfortaa } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Comfortaa({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function RootLayout({
   children,
@@ -18,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={inter.className}>
+      <body className={font.className}>
         <NavBar />
         <div className='bg-black'>{children}</div>
       </body>
