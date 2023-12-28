@@ -1,9 +1,9 @@
 import NavBar from "../components/NavBar";
-import { Comfortaa } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 
-const font = Comfortaa({
-  weight: "400",
+const font = Raleway({
+  weight: "300",
   subsets: ["latin"],
   display: "swap",
 });
@@ -24,7 +24,7 @@ export default function RootLayout({
       </head>
       <body className={font.className}>
         <NavBar />
-        <div className="bg-black">{children}</div>
+        <div className="bg-black overflow-auto">{children}</div>
       </body>
     </html>
   );
