@@ -3,7 +3,7 @@ import React from "react";
 import Socials from "@/components/Socials";
 import { Rubik_80s_Fade, Raleway } from "next/font/google";
 import Education from "../components/Education";
-import Card from "../components/Card";
+import Projects from "../components/Projects";
 
 const main_font = Rubik_80s_Fade({
   weight: "400",
@@ -14,7 +14,7 @@ const main_font = Rubik_80s_Fade({
 export default function Home() {
   return (
     <>
-      <section className="py-8">
+      <section id="home" className="py-8">
         <div className="flex justify-center items-center">
           <Image
             src="/Alvin.png"
@@ -41,8 +41,8 @@ export default function Home() {
           <span className="text-slate-400">Backend Developer</span> from India
         </p>
         <Socials />
-      </section >
-      <section id="about" className="py-8">
+      </section>
+      <section id="about" className="py-8 place-items-center bg-slate-950">
         <div className="text-white text-4xl text-center">
           <h1>About</h1>
         </div>
@@ -53,6 +53,15 @@ export default function Home() {
         </div>
         <Education />
       </section>
+      <section id="projects" className="py-8 place-items-center">
+        <div className="text-white text-4xl text-center">
+          <h1>Projects</h1>
+        </div>
+        <div>
+          <Projects />
+        </div>
+      </section>
+        
     </>
   );
 }
