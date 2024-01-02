@@ -26,7 +26,7 @@ export default function Socials() {
       </div>
       <div className="p-1">
         <SocialIcon
-          url="https://monkeytype.com/profile/alvinbengeorge"
+          url="https://www.hackerrank.com/profile/alvinallen333"
           target="_blank"
           className="p-2"
         />
