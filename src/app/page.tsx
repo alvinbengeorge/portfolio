@@ -11,11 +11,11 @@ const about_heading_font = localFont({ src: "../../public/Caveat-Regular.ttf" })
 export default function Home() {
   return (
     <>
-      <section id="home" className="p-1 bg-[url('/background.jpg')] bg-contain sm:p-8">
+      <section id="home" className="p-1 bg-[url('/background.webp')] bg-contain sm:p-8">
         <div className="backdrop-blur-lg bg-slate-800/1 rounded-3xl shadow shadow-slate-500 items-center">
           <div className="flex justify-center items-center">
             <Image
-              src="/Alvin.png"
+              src="/Alvin.webp"
               width={200}
               height={200}
               className="rounded-full grayscale"
