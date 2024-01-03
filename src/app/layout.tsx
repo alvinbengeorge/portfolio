@@ -1,12 +1,10 @@
 import NavBar from "../components/NavBar";
-import { Raleway } from "next/font/google";
+import localFont from "next/font/local"
 import "./globals.css";
 
-const font = Raleway({
-  weight: "300",
-  subsets: ["latin"],
-  display: "swap",
-});
+const font = localFont({
+  src: "../../public/Raleway-Regular.ttf"
+})
 
 export default function RootLayout({
   children,
@@ -18,6 +16,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Hello, I am Alvin Ben George, a Backend Developer currently interested in Python, TypeScript and Embedded Systems, currently pursuing Electronics and Computer Engineering." />
         <title>Alvin Ben George</title>
         <link rel="icon" href="/favicon.ico" />
       </head>

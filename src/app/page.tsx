@@ -5,13 +5,14 @@ import localFont from "next/font/local";
 import Education from "../components/Education";
 import Projects from "../components/Projects";
 
-const main_font = localFont({ src: "../../public/Rubik80sFade-Regular.ttf"});
+const main_font = localFont({ src: "../../public/Rubik80sFade-Regular.ttf" });
+const about_heading_font = localFont({ src: "../../public/Caveat-Regular.ttf" });
 
 export default function Home() {
   return (
     <>
-      <section id="home" className="p-1 bg-slate-500 bg-center sm:p-4">
-        <div className="backdrop-blur-lg bg-slate-800 rounded-lg">
+      <section id="home" className="p-1 bg-[url('/background.jpg')] bg-contain sm:p-8">
+        <div className="backdrop-blur-lg bg-slate-800/1 rounded-3xl shadow shadow-slate-500 items-center">
           <div className="flex justify-center items-center">
             <Image
               src="/Alvin.png"
@@ -45,13 +46,17 @@ export default function Home() {
         </div>
       </section>
       <section id="about" className="py-8 place-items-center bg-slate-950">
-        <div className="text-white text-4xl text-center">
-          <h1>About</h1>
-        </div>
-        <div>
-          <p className="text-white text-center text-md p-4">
-          Hello, I am Alvin Ben George, a Backend Developer currently interested in Python, TypeScript and Embedded Systems, currently pursuing Electronics and Computer Engineering. 
-          </p>
+        <div className="ps-8 pe-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-1 bg-slate-950 bg-center shadow shadow-slate-400 rounded-3xl">
+            <div className="rounded-3xl w-full">
+              <h1 className={about_heading_font.className + " text-center text-6xl h-full text-center"}>About</h1>
+            </div>
+            <div className="rounded-3xl bg-slate-800">
+              <p className="text-white text-left text-md p-4">
+                Hello, I am Alvin Ben George, a Backend Developer currently interested in Python, TypeScript and Embedded Systems, currently pursuing Electronics and Computer Engineering.
+              </p>
+            </div>
+          </div>
         </div>
         <Education />
       </section>
@@ -63,7 +68,7 @@ export default function Home() {
           <Projects />
         </div>
       </section>
-        
+
     </>
   );
 }
