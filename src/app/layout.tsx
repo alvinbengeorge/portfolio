@@ -1,10 +1,6 @@
 import NavBar from "../components/NavBar";
-import localFont from "next/font/local"
+import { font } from "../utils/fonts";
 import "./globals.css";
-
-const font = localFont({
-  src: "../../public/Raleway-Regular.ttf"
-})
 
 export default function RootLayout({
   children,
@@ -12,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className=" scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

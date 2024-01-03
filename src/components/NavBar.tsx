@@ -1,11 +1,5 @@
 import Link from "next/link";
-import { Caveat } from "next/font/google";
-
-const main_font = Caveat({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+import { about_heading_font as main_font } from "../utils/fonts";
 
 const NavBar = () => {
   return (

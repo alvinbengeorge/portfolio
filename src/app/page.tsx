@@ -1,18 +1,15 @@
 import Image from "next/image";
 import React from "react";
 import Socials from "@/components/Socials";
-import localFont from "next/font/local";
+import { about_heading_font } from "../utils/fonts";
 import Education from "../components/Education";
 import Projects from "../components/Projects";
-
-const main_font = localFont({ src: "../../public/Rubik80sFade-Regular.ttf" });
-const about_heading_font = localFont({ src: "../../public/Caveat-Regular.ttf" });
 
 export default function Home() {
   return (
     <>
-      <section id="home" className="p-1 bg-[url('/background.webp')] bg-contain sm:p-8">
-        <div className="backdrop-blur-lg bg-slate-800/1 rounded-3xl shadow shadow-slate-500 items-center">
+      <section id="home" className="p-1 bg-gradient-to-b from-black to-slate-950 sm:p-8">
+        <div className="backdrop-blur-lg bg-slate-800/1 rounded-3xl border border-slate-500 items-center">
           <div className="flex justify-center items-center">
             <Image
               src="/Alvin.webp"
@@ -28,7 +25,7 @@ export default function Home() {
             <h1
               className={
                 "text-8xl text-center p-2 rounded-md text-white  inline " +
-                main_font.className +
+                about_heading_font.className +
                 " hover:animate-pulse"
               }
             >
@@ -49,7 +46,7 @@ export default function Home() {
         <div className="ps-8 pe-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-1 bg-slate-950 bg-center shadow shadow-slate-400 rounded-3xl">
             <div className="rounded-3xl w-full">
-              <h1 className={about_heading_font.className + " text-center text-6xl h-full text-center"}>About</h1>
+              <h1 className={about_heading_font.className + " text-center text-6xl h-full text-center text-white"}>About</h1>
             </div>
             <div className="rounded-3xl bg-slate-800">
               <p className="text-white text-left text-md p-4">
