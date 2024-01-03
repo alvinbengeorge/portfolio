@@ -1,46 +1,48 @@
 import Image from "next/image";
 import React from "react";
 import Socials from "@/components/Socials";
-import { Rubik_80s_Fade, Raleway } from "next/font/google";
+import localFont from "next/font/local";
 import Education from "../components/Education";
 import Projects from "../components/Projects";
 
-const main_font = Rubik_80s_Fade({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+const main_font = localFont({ src: "../../public/Rubik80sFade-Regular.ttf"});
 
 export default function Home() {
   return (
     <>
-      <section id="home" className="py-8">
-        <div className="flex justify-center items-center">
-          <Image
-            src="/Alvin.png"
-            width={200}
-            height={200}
-            className="rounded-full grayscale bg-gray-950"
-            alt="Alvin Ben George"
-          />
+      <section id="home" className="p-1 bg-slate-500 bg-center sm:p-4">
+        <div className="backdrop-blur-lg bg-slate-800 rounded-lg">
+          <div className="flex justify-center items-center">
+            <Image
+              src="/Alvin.png"
+              width={200}
+              height={200}
+              className="rounded-full grayscale"
+              alt="Alvin Ben George"
+              priority={true}
+              quality={50}
+            />
+          </div>
+          <div className="text-center">
+            <h1
+              className={
+                "text-8xl text-center p-2 rounded-md text-white  inline " +
+                main_font.className +
+                " hover:animate-pulse"
+              }
+            >
+              Hello World!
+            </h1>
+          </div>
+          <div className="p-4">
+            <p className="text-center text-slate-100 text-wrap">
+              Hi, I am <span className="text-slate-400">Alvin Ben George</span>
+              <br></br>
+              <span className="text-slate-400">Backend Developer</span> from India
+            </p>
+            <Socials />
+          </div>
         </div>
-        <div className="text-center">
-          <h1
-            className={
-              "text-8xl text-center p-2 rounded-md text-white  inline " +
-              main_font.className +
-              " hover:animate-pulse"
-            }
-          >
-            Hello World!
-          </h1>
-        </div>
-        <p className="text-center text-slate-100 p-4 text-wrap">
-          Hi, I am <span className="text-slate-400">Alvin Ben George</span>
-          <br></br>
-          <span className="text-slate-400">Backend Developer</span> from India
-        </p>
-        <Socials />
       </section>
       <section id="about" className="py-8 place-items-center bg-slate-950">
         <div className="text-white text-4xl text-center">

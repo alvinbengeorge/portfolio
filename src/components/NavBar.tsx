@@ -9,7 +9,7 @@ const main_font = Caveat({
 
 const NavBar = () => {
   return (
-    <nav className="shadow-box p-2 w-full sticky top-0 backdrop-blur-xl bg-white/1">
+    <nav className="shadow-box p-2 w-full sticky top-0 backdrop-blur-xl bg-white/1 z-40">
       <div className="flex justify-between">
         <div>
           <Link
