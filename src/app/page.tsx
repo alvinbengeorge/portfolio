@@ -8,8 +8,8 @@ import Projects from "../components/Projects";
 export default function Home() {
   return (
     <>
-      <section id="home" className="p-1 bg-gradient-to-b from-black to-slate-950 sm:p-8">
-        <div className="backdrop-blur-lg bg-slate-800/1 rounded-3xl border border-slate-500 items-center">
+      <section id="home" className="p-0 bg-[url('/background.webp')] bg-center sm:p-8">
+        <div className="backdrop-blur-lg bg-slate-800/30 rounded-3xl sm:border border-slate-500">
           <div className="flex justify-center items-center">
             <Image
               src="/Alvin.webp"
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         <Education />
       </section>
-      <section id="projects" className="py-8 place-items-center">
+      <section id="projects" className="py-8 place-items-center bg-gradient-to-b to-black from-slate-950">
         <div className="text-white text-4xl text-center">
           <h1>Projects</h1>
         </div>

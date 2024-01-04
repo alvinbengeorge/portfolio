@@ -3,6 +3,17 @@ import React from "react";
 
 let cache: any = {};
 
+const repository = [
+  "AlfredDiscordBot/alfred-discord-bot",
+  "alvinbengeorge/FileSync",
+  "alvinbengeorge/portfolio",
+  "alvinbengeorge/CRustCpp",
+  "alvinbengeorge/todoBackend",
+  "alvinbengeorge/quickpodbackend",
+  "alvinbengeorge/hamiltonian",
+  "alvinbengeorge/webschool_django"    
+]
+
 const ProjectCard = async ({ link }: { link: string }) => {
   let repo: any = {};
   if (!cache[link]) {
@@ -42,14 +53,9 @@ const Projects = async () => {
   return (
     <div className="grid grid-cols-1">
       <div className="flex grid grid-cols-1 p-8 gap-2 md:grid-cols-4">
-        <ProjectCard link="AlfredDiscordBot/alfred-discord-bot" />
-        <ProjectCard link="alvinbengeorge/FileSync" />
-        <ProjectCard link="alvinbengeorge/portfolio" />
-        <ProjectCard link="alvinbengeorge/CRustCpp" />
-        <ProjectCard link="alvinbengeorge/todoBackend" />
-        <ProjectCard link="alvinbengeorge/quickpodbackend" />
-        <ProjectCard link="alvinbengeorge/hamiltonian" />
-        <ProjectCard link="alvinbengeorge/webschool_django" />
+        {repository.map((repo_link: string, index: number) => {
+          return (<ProjectCard link={repo_link} key={index}/>)
+        })}
       </div>
     </div>
   );
