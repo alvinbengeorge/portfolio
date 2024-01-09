@@ -25,7 +25,7 @@ const ProjectCard = async ({ link }: { link: string }) => {
     repo = cache[link];
   }
   return (
-    <div className="bg-slate-900 rounded-3xl h-36 sm:h-48">
+    <div className="bg-slate-900 rounded-3xl h-36 w-72 sm:h-48">
       <div className="bg-slate-800 rounded-full ">
         <Link href={repo.html_url} target="_blank" className="flex p-2">
           <div className="rounded-full bg-white h-fit w-fit place-items-center hover:translate-x-2 transition-transform duration-700 ease-in-out">
@@ -52,7 +52,7 @@ const ProjectCard = async ({ link }: { link: string }) => {
 const Projects = async () => {
   return (
     <div className="grid grid-cols-1">
-      <div className="flex grid grid-cols-1 p-8 gap-2 md:grid-cols-4">
+      <div className="flex flex-wrap p-8 gap-2 place-content-center">
         {repository.map((repo_link: string, index: number) => {
           return (<ProjectCard link={repo_link} key={index}/>)
         })}

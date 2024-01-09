@@ -4,6 +4,7 @@ import Socials from "@/components/Socials";
 import { about_heading_font } from "../utils/fonts";
 import Education from "../components/Education";
 import Projects from "../components/Projects";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -65,6 +66,10 @@ export default function Home() {
           <Projects />
         </div>
       </section>
+      {/* <section id="experience" className="py-8 place-items-center bg-gradient-to-b from-black to-slate-950">
+        <h1 className="text-white text-4xl text-center">Experience</h1>
+        <Experience />
+      </section> */}
 
     </>
   );
