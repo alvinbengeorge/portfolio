@@ -1,60 +1,89 @@
 "use client";
+import Image from "next/image";
+
+const skills: string[] = [
+  "docker-plain",
+  "python-plain",
+  "typescript-plain",
+  "javascript-plain",
+  "nodejs-plain",
+  "npm-original-wordmark",
+  "nextjs-plain",
+  "express-original",
+  "mongodb-plain",
+  "postgresql-plain",
+  "mysql-plain",
+  "html5-plain",
+  "css3-plain",
+  "tailwindcss-plain",
+  "react-plain",
+  "svelte-plain",
+  "arduino-plain",
+  "raspberrypi-line",
+  "bash-plain",
+  "git-plain",
+  "github-plain",
+  "gentoo-plain",
+  "fastapi-plain",
+  "redhat-plain",
+  "gcc-plain",
+  "django-plain",
+  "flask-original",
+  "fedora-plain",
+  "debian-plain",
+  "linux-plain",
+  "c-plain",
+  "java-plain",
+];
+const roles = ["/srmkzilla.png", "/dsc.png", "/gdsc.png"];
+
+const Skill = ({ skill }: { skill: string }) => {
+  return (
+    <div className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl">
+      <div className="p-4 transition duration-500 ease-in-out hover:bg-slate-950">
+        <span
+          className={`devicon-${skill} text-6xl text-white rounded-full`}
+        ></span>
+      </div>
+      {/* <p className="text-xs text-center">{skill.split("-")[0]}</p> */}
+    </div>
+  );
+};
+
+const Role = ({ role }: { role: string }) => (
+  <div
+    key={role}
+    className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl"
+  >
+    <div className="p-4 transition duration-500 ease-in-out hover:bg-slate-950 h-full">
+      <Image
+        src={role}
+        width={200}
+        height={200}
+        className="rounded-full"
+        alt="Alvin Ben George"
+        priority={true}
+        quality={10}
+      />
+    </div>
+  </div>
+);
 
 const Experience = () => {
-  const skills: string[] = [
-    "docker-plain",
-    "python-plain",
-    "typescript-plain",
-    "nextjs-plain",
-    "express-original",
-    "mongodb-plain",
-    "postgresql-plain",
-    "mysql-plain",
-    "html5-plain",
-    "css3-plain",
-    "tailwindcss-plain",
-    "react-plain",
-    "svelte-plain",
-    "arduino-plain",
-    "raspberrypi-line",
-    "bash-plain",
-    "git-plain",
-    "github-plain",
-    "gentoo-plain",
-    "fastapi-plain",
-    "redhat-plain",
-    "gcc-plain",
-    "django-plain",
-    "flask-original",
-  ];
   return (
-    <div className="grid grid-cols-1 gap-4 p-8 sm:grid-cols-2">
-      <div className="bg-slate-900 rounded-3xl p-4 grid grid-cols-1 gap-2">
-        <div className="bg-slate-950 rounded-xl">
-          <h1 className="text-white text-4xl text-center p-2">My Roles</h1>
-        </div>
-        
+    <div>
+      <div className="flex flex-wrap gap-2 p-8 place-content-center">
+        {skills.map((skill) => (
+          <Skill skill={skill} key={skill} />
+        ))}
       </div>
-      <div className="bg-slate-900 rounded-3xl p-4 grid grid-cols-1 gap-2">
-        <div className="bg-slate-950 rounded-xl">
-          <h1 className="text-white text-4xl text-center p-2">Tech Stack</h1>
-        </div>
-        <div className="bg-slate-950 rounded-xl">
-          <div className="flex flex-wrap gap-2 p-2 place-content-center">
-            {skills.map((skill: string, index: number) => {
-              return (
-                <div className="bg-slate-900 rounded-xl p-2" key={index}>
-                  <i
-                    className={`devicon-${skill} p-2 rounded-full transition ease-in-out duration-500 hover:shadow-xl`}
-                  ></i>
-                </div>
-              );
-            })}
-          </div>
+      <div>
+        <h1 className="text-4xl text-center text-white">Roles</h1>
+        <div className="flex flex-wrap gap-2 p-8 place-content-center">
+          {roles.map((role) => Role({ role }))}
         </div>
       </div>
     </div>
   );
 };
-
 export default Experience;

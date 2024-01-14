@@ -9,8 +9,11 @@ import Experience from "@/components/Experience";
 export default function Home() {
   return (
     <>
-      <section id="home" className="p-0 bg-[url('/background.webp')] bg-center sm:p-8">
-        <div className="backdrop-blur-lg bg-slate-800/30 rounded-3xl sm:border border-slate-500">
+      <section
+        id="home"
+        className="p-0 bg-gradient-to-b from-black to-slate-950 sm:p-8 sm:bg-[url('/background.webp')] sm:bg-center"
+      >
+        <div className="rounded-none bg-transparent sm:border sm:border-slate-500 sm:backdrop-blur-lg bg-slate-800/30 sm:shadow-2xl sm:rounded-3xl">
           <div className="flex justify-center items-center">
             <Image
               src="/Alvin.webp"
@@ -19,7 +22,7 @@ export default function Home() {
               className="rounded-full grayscale"
               alt="Alvin Ben George"
               priority={true}
-              quality={50}
+              quality={40}
             />
           </div>
           <div className="text-center">
@@ -37,7 +40,8 @@ export default function Home() {
             <p className="text-center text-slate-100 text-wrap">
               Hi, I am <span className="text-slate-400">Alvin Ben George</span>
               <br></br>
-              <span className="text-slate-400">Backend Developer</span> from India
+              <span className="text-slate-400">Backend Developer</span> from
+              India
             </p>
             <Socials />
           </div>
@@ -47,18 +51,30 @@ export default function Home() {
         <div className="ps-8 pe-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-1 bg-slate-950 bg-center shadow shadow-slate-400 rounded-3xl">
             <div className="rounded-3xl w-full">
-              <h1 className={about_heading_font.className + " text-center text-6xl h-full text-center text-white"}>About</h1>
+              <h1
+                className={
+                  about_heading_font.className +
+                  " text-center text-6xl h-full text-center text-white"
+                }
+              >
+                About
+              </h1>
             </div>
             <div className="rounded-3xl bg-slate-800">
               <p className="text-white text-left text-md p-4">
-                Hello, I am Alvin Ben George, a Backend Developer currently interested in Python, TypeScript and Embedded Systems, currently pursuing Electronics and Computer Engineering.
+                Hello, I am Alvin Ben George, a Backend Developer currently
+                interested in Python, TypeScript and Embedded Systems, currently
+                pursuing Electronics and Computer Engineering.
               </p>
             </div>
           </div>
         </div>
         <Education />
       </section>
-      <section id="projects" className="py-8 place-items-center bg-gradient-to-b to-black from-slate-950">
+      <section
+        id="projects"
+        className="py-8 place-items-center bg-gradient-to-b to-black from-slate-950"
+      >
         <div className="text-white text-4xl text-center">
           <h1>Projects</h1>
         </div>
@@ -66,11 +82,15 @@ export default function Home() {
           <Projects />
         </div>
       </section>
-      {/* <section id="experience" className="py-8 place-items-center bg-gradient-to-b from-black to-slate-950">
-        <h1 className="text-white text-4xl text-center">Experience</h1>
+      <section
+        id="experience"
+        className="py-8 place-items-center bg-gradient-to-b from-black to-slate-950"
+      >
+        <div className="">
+          <h1 className="text-white text-4xl text-center p-4">Experience</h1>
+        </div>
         <Experience />
-      </section> */}
-
+      </section>
     </>
   );
 }

@@ -69,6 +69,24 @@ const NavBar = () => {
               </svg>
             </Link>
           </li>
+          <li className="mx-2">
+            <Link href="#experience">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
