@@ -42,7 +42,7 @@ const Skill = ({ skill }: { skill: string }) => {
     <div className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl">
       <div className="p-4 transition duration-500 ease-in-out hover:bg-slate-950">
         <span
-          className={`devicon-${skill} text-6xl text-white rounded-full`}
+          className={`devicon-${skill} text-3xl rounded-full`}
         ></span>
       </div>
       {/* <p className="text-xs text-center">{skill.split("-")[0]}</p> */}
@@ -71,15 +71,18 @@ const Role = ({ role }: { role: string }) => (
 
 const Experience = () => {
   return (
-    <div>
-      <div className="flex flex-wrap gap-2 p-8 place-content-center">
-        {skills.map((skill) => (
-          <Skill skill={skill} key={skill} />
-        ))}
+    <div className="grid grid-cols-1 gap-2 p-8 sm:grid-cols-2">
+      <div className="shadow bg-slate-700 rounded-3xl">
+        <h1 className="text-4xl text-center text-white p-4">Skills</h1>
+        <div className="flex flex-wrap gap-2 pe-8 ps-8 py-4 place-content-center">
+          {skills.map((skill) => (
+            <Skill skill={skill} key={skill} />
+          ))}
+        </div>
       </div>
-      <div>
-        <h1 className="text-4xl text-center text-white">Roles</h1>
-        <div className="flex flex-wrap gap-2 p-8 place-content-center">
+      <div className="bg-slate-700 rounded-3xl">
+        <h1 className="text-4xl text-center text-white p-4">Roles</h1>
+        <div className="flex flex-wrap gap-2 pe-8 ps-8 py-4 place-content-center">
           {roles.map((role) => Role({ role }))}
         </div>
       </div>

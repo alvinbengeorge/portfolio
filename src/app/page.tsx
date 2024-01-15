@@ -48,8 +48,8 @@ export default function Home() {
         </div>
       </section>
       <section id="about" className="py-8 place-items-center bg-slate-950">
-        <div className="ps-8 pe-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-1 bg-slate-950 bg-center shadow shadow-slate-400 rounded-3xl">
+        <div className="p-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-1 bg-slate-950 bg-center shadow shadow-slate-400 rounded-3xl p-1">
             <div className="rounded-3xl w-full">
               <h1
                 className={
@@ -73,7 +73,7 @@ export default function Home() {
       </section>
       <section
         id="projects"
-        className="py-8 place-items-center bg-gradient-to-b to-black from-slate-950"
+        className="py-8 place-items-center bg-gradient-to-b to-slate-600 from-slate-950"
       >
         <div className="text-white text-4xl text-center">
           <h1>Projects</h1>
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
       <section
         id="experience"
-        className="py-8 place-items-center bg-gradient-to-b from-black to-slate-950"
+        className="py-8 place-items-center bg-slate-600"
       >
         <div className="">
           <h1 className="text-white text-4xl text-center p-4">Experience</h1>
