@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const skills: string[] = [
   "docker-plain",
@@ -39,8 +40,8 @@ const roles = ["/srmkzilla.png", "/dsc.png", "/gdsc.png"];
 
 const Skill = ({ skill }: { skill: string }) => {
   return (
-    <div className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl">
-      <div className="p-4 transition duration-500 ease-in-out hover:bg-slate-950">
+    <div className="bg-slate-900 transition duration-500 ease-in-out flex flex-col place-content-center items-center rounded-xl hover:scale-110">
+      <div className="p-4">
         <span
           className={`devicon-${skill} text-3xl rounded-full`}
         ></span>
@@ -53,9 +54,9 @@ const Skill = ({ skill }: { skill: string }) => {
 const Role = ({ role }: { role: string }) => (
   <div
     key={role}
-    className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl"
+    className="bg-slate-900 flex flex-col transition duration-500 ease-in-out place-content-center items-center rounded-xl hover:scale-105"
   >
-    <div className="p-4 transition duration-500 ease-in-out hover:bg-slate-950 h-full">
+    <div className="p-4 h-full">
       <Image
         src={role}
         width={200}
@@ -71,7 +72,7 @@ const Role = ({ role }: { role: string }) => (
 
 const Experience = () => {
   return (
-    <div className="grid grid-cols-1 gap-2 p-8 sm:grid-cols-2">
+    <motion.div className="grid grid-cols-1 gap-2 p-8 sm:grid-cols-2">
       <div className="shadow bg-slate-700 rounded-3xl">
         <h1 className="text-4xl text-center text-white p-4">Skills</h1>
         <div className="flex flex-wrap gap-2 pe-8 ps-8 py-4 place-content-center">
@@ -86,7 +87,7 @@ const Experience = () => {
           {roles.map((role) => Role({ role }))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default Experience;
