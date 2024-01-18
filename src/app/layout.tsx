@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { font } from "../utils/fonts";
 import "./globals.css";
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={font.className + " bg-black"}>
         <NavBar />
         <div className="bg-black overflow-auto">{children}</div>
+        <Footer />
       </body>
     </html>
   );
