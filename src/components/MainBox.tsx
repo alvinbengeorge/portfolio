@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import Socials from "./Socials";
@@ -7,12 +6,7 @@ import { about_heading_font } from "../utils/fonts";
 
 export default function MainBox() {
   return (
-    <motion.div className="rounded-none bg-transparent sm:border sm:border-slate-500 sm:backdrop-blur-lg bg-slate-800/30 sm:shadow-2xl sm:rounded-3xl"
-    initial={{opacity: 0, y:"10%"}}
-    whileInView={{opacity: 1, y:0}}
-    whileHover={{scale: 1.05}}
-    transition={{duration: 1}}
-    viewport={{once: true}}
+    <div className="rounded-none bg-transparent sm:border sm:border-slate-500 sm:backdrop-blur-lg bg-slate-800/30 sm:shadow-2xl sm:rounded-3xl hover:scale-105 transition duration-500 ease-in-out"
     >
       <div className="flex justify-center items-center">
         <Image
@@ -45,6 +39,6 @@ export default function MainBox() {
         </p>
         <Socials />
       </div>
-    </motion.div>
+    </div>
   );
 }

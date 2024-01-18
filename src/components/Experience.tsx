@@ -46,7 +46,7 @@ const Skill = ({ skill, index }: { skill: string; index: number }) => {
       initial={{ opacity: 0, y: "75%" }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: index / 12 }}
+      transition={{ duration: index % 3 / 12 }}
       whileHover={{ scale: 1.1 }}
     >
       <div className="p-4">
