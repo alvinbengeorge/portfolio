@@ -1,15 +1,10 @@
 "use client";
 import React from 'react';
-import { motion } from 'framer-motion';
 import { about_heading_font } from '../utils/fonts';
 
 export default function About() {
     return (
-        <motion.div className="p-8"
-        initial={{opacity: 0, y: '20%'}}
-        whileInView={{opacity: 1, y: 0}}
-        transition={{duration: 1}}
-        viewport={{once: true}}>
+        <div className="p-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-1 bg-slate-950 bg-center shadow shadow-slate-400 rounded-3xl p-1">
             <div className="rounded-3xl w-full">
               <h1
@@ -29,6 +24,6 @@ export default function About() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
     );
 }

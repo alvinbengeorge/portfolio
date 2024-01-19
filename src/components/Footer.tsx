@@ -6,7 +6,7 @@ export default function Footer() {
     <div>
       <footer className="bg-slate-950 text-white text-center p-4">
         <div className="p-2">
-          <p>Made with ❤️ by alvinbengeorge</p>
+          <p>Made with ❤️</p>
         </div>
       </footer>
     </div>

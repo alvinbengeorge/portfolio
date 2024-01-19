@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 
 const data = [
   {
@@ -22,7 +21,7 @@ const data = [
 
 export default function Education() {
   return (
-    <motion.div className="ps-8 pe-8 py-2" initial={{opacity: 0}} whileInView={{opacity: 1}} viewport={{once: true}} transition={{duration: 1}}>
+    <div className="ps-8 pe-8 py-2">
       <div className="py-2">
         <h1 className="text-slate-100 text-4xl text-center py-8 bg-slate-800 rounded-full md:rounded-lg">
           Education
@@ -48,6 +47,6 @@ export default function Education() {
           );
         })}
       </div>
-    </motion.div>
+    </div>
   );
 }

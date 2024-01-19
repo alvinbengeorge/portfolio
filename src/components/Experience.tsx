@@ -42,17 +42,17 @@ const roles = ["/srmkzilla.png", "/dsc.png", "/gdsc.png"];
 const Skill = ({ skill, index }: { skill: string; index: number }) => {
   return (
     <motion.div
-      className="bg-slate-900 transition duration-500 ease-in-out flex flex-col place-content-center items-center rounded-xl"
-      initial={{ opacity: 0, y: "75%" }}
+      className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl"
+      initial={{ opacity: 0, y: "25%" }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: index % 3 / 12 }}
-      whileHover={{ scale: 1.1 }}
+      transition={{ duration: index / 12 }}
+      whileHover={{ scale: 1.05 }}
     >
       <div className="p-4">
         <span className={`devicon-${skill} text-3xl rounded-full`}></span>
       </div>
-      {/* <p className="text-xs text-center">{skill.split("-")[0]}</p> */}
+      {/* <p className="text-xs text-center">{skill.split("-")[0]}</p>  */}
     </motion.div>
   );
 };
@@ -61,11 +61,11 @@ const Role = ({ role, index }: { role: string; index: number }) => (
   <motion.div
     key={role}
     className="bg-slate-900 flex flex-col transition duration-500 ease-in-out place-content-center items-center rounded-xl"
-    initial={{ opacity: 0, y: "75%" }}
+    initial={{ opacity: 0, y: "25%" }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: index * 0.2 }}
-    whileHover={{ scale: 1.1 }}
+    whileHover={{ scale: 1.05 }}
   >
     <div className="p-4 h-full">
       <Image
@@ -83,7 +83,7 @@ const Role = ({ role, index }: { role: string; index: number }) => (
 
 const Experience = () => {
   return (
-    <div className="grid grid-cols-1 gap-2 p-8 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-2 ps-8 pe-8">
       <div className="shadow bg-slate-700 rounded-3xl">
         <h1 className="text-4xl text-center text-white p-4">Skills</h1>
         <div className="flex flex-wrap gap-2 pe-8 ps-8 py-4 place-content-center">
