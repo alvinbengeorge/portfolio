@@ -1,5 +1,6 @@
 import MainBox from "../components/MainBox";
 import React from "react";
+import Image from "next/image";
 import About from "../components/About";
 import Education from "../components/Education";
 import Projects from "../components/Projects";
@@ -10,9 +11,9 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="p-0 bg-gradient-to-b overlay-hidden from-black to-slate-950 sm:p-8 sm:bg-[url('/background.webp')] sm:bg-center"
+        className="p-0 bg-gradient-to-b overlay-hidden from-black to-slate-950 sm:p-8"
       >
-        <MainBox />        
+          <MainBox />
       </section>
       <section id="about" className="py-8 place-items-center bg-slate-950 overlay-hidden">
         <About />

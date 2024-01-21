@@ -60,8 +60,8 @@ const Skill = ({ skill, index }: { skill: string; index: number }) => {
 const Role = ({ role, index }: { role: string; index: number }) => (
   <motion.div
     key={role}
-    className="bg-slate-900 flex flex-col transition duration-500 ease-in-out place-content-center items-center rounded-xl"
-    initial={{ opacity: 0, y: "25%" }}
+    className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl"
+    initial={{ opacity: 0, y: "10%" }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: index * 0.2 }}
