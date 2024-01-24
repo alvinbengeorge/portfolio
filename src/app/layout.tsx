@@ -16,7 +16,6 @@ export default function RootLayout({
         <meta name="description" content="Hello, I am Alvin Ben George, a Backend Developer currently interested in Python, TypeScript and Embedded Systems, currently pursuing Electronics and Computer Engineering." />
         <title>Alvin Ben George</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
           
       </head>
       <body className={font.className + " bg-black"}>

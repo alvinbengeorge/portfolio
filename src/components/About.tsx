@@ -10,7 +10,7 @@ export default function About() {
               <h1
                 className={
                   about_heading_font.className +
-                  " text-center text-6xl h-full text-center text-white"
+                  " text-6xl h-full text-center text-white"
                 }
               >
                 About
