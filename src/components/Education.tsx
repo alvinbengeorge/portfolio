@@ -32,7 +32,7 @@ export default function Education() {
           return (
             <div
               key={index}
-              className="text-white text-center p-4 bg-slate-900 w-full container rounded-full md:rounded-lg p-1"
+              className="text-white text-center p-4 bg-slate-900 w-full container rounded-full md:rounded-lg"
             >
               <div>
                 <h1 className="text-slate-400 text-2xl">{item.institution}</h1>

@@ -15,7 +15,7 @@ const NavBar = () => {
           </Link>
         </div>
         <ul className="flex justify-between text-white">
-          <li className="mx-2">
+          <li className="mx-2 hover:scale-110 transition ease-in-out duration-500">
             <Link href="#home">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const NavBar = () => {
               </svg>
             </Link>
           </li>
-          <li className="mx-2">
+          <li className="mx-2 hover:scale-110 transition ease-in-out duration-500">
             <Link href="#about">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const NavBar = () => {
               </svg>
             </Link>
           </li>
-          <li className="mx-2">
+          <li className="mx-2 hover:scale-110 transition ease-in-out duration-500">
             <Link href="#projects">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const NavBar = () => {
               </svg>
             </Link>
           </li>
-          <li className="mx-2">
+          <li className="mx-2 hover:scale-110 transition ease-in-out duration-500">
             <Link href="#experience">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
