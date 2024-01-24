@@ -6,8 +6,7 @@ import { about_heading_font } from "../utils/fonts";
 
 export default function MainBox() {
   return (
-    <div className="bg-transparent hover:scale-105 transition duration-500 ease-in-out border border-transparent rounded-3xl sm:hover:bg-slate-900 sm:hover:border-slate-400"
-    >
+    <div className="bg-transparent hover:scale-105 transition duration-500 ease-in-out border border-transparent rounded-3xl sm:hover:bg-slate-900 sm:hover:border-slate-400">
       <div className="flex justify-center items-center">
         <Image
           src="/Alvin.webp"
