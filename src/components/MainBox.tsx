@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import Socials from "./Socials";
-import { about_heading_font } from "../utils/fonts";
+import { main_font, about_heading_font } from "../utils/fonts";
 
 export default function MainBox() {
   return (
@@ -22,7 +22,7 @@ export default function MainBox() {
         <h1
           className={
             "text-8xl text-center p-2 rounded-md text-white  inline " +
-            about_heading_font.className +
+            main_font.className +
             " hover:animate-pulse"
           }
         >
