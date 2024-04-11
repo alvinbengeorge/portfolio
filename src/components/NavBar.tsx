@@ -8,7 +8,7 @@ const NavBar = () => {
         <div>
           <Link
             className={main_font.className + " text-2xl text-white"}
-            href="#home"
+            href="/#home"
             scroll={false}
           >
             Alvin
