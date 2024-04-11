@@ -693,7 +693,7 @@ int main() {
 
 function ContentDisplay({ content }: { content: string }) {
   return (
-    <div className="p-4 bg-slate-900 text-wrap overflow-y-scroll rounded-xl h-96 text-xs">
+    <div className="p-4 bg-slate-900 text-wrap overflow-y-scroll rounded-xl h-96 text-xs text-white">
       <Markdown>{"```\n" + content + "\n```"}</Markdown>
     </div>
   );
