@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="p-3 bg-gradient-to-b overlay-hidden from-black to-slate-950 sm:p-8"
+        className=" p-3 overlay-hidden bg-[url('/background.webp')] sm:p-8 bg-center h-min"
       >
           <MainBox />
       </section>
