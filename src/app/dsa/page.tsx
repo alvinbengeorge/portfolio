@@ -693,7 +693,7 @@ int main() {
 
 function ContentDisplay({ content }: { content: string }) {
   return (
-    <div className="p-4 bg-slate-900 text-wrap overflow-y-scroll rounded-xl h-96 text-xs text-white">
+    <div className="p-4 bg-slate-900 text-wrap rounded-xl text-xs text-white">
       <Markdown>{"```\n" + content + "\n```"}</Markdown>
     </div>
   );
@@ -703,7 +703,7 @@ export default function Page() {
   return (
     <section className="grid place-items-center p-1 lg:p-16 text-white">
       <h1 className={" text-2xl lg:text-6xl text-center p-8"}>Code</h1>
-      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-2">
         <div className="grid grid-cols-1 gap-2">
           <h2 className={" text-xl lg:text-4xl text-center p-4 bg-slate-600"}>
             Insertion in Circular Linked Lists
