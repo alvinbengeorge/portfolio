@@ -702,7 +702,7 @@ function ContentDisplay({ content }: { content: string }) {
 const FAQ = ({ question, answer }: { question: string; answer: string }) => {
   return (
     <>
-      <div className="collapse bg-base-200">
+      <div className="collapse bg-slate-800 text-white">
         <input type="radio" name="my-accordion-1" defaultChecked />
         <div className="collapse-title text-xl font-medium">
           {question}
