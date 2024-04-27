@@ -96,7 +96,7 @@ export default function Projects() {
                     "arduino-original",
                     "c-original",
                     "cplusplus-original",
-                    "typescript-original"
+                    "typescript-plain"
                   ].map((skill, index) => {
                     return <Skill skill={skill} key={index} />;
                   })}

@@ -25,14 +25,23 @@ export default function MainBox() {
         </div>
       </div>
       <div className="grid place-items-center grid-cols-2 rounded-2xl gap-2">
-        <div className="bg-[#282828] rounded-2xl w-full h-full col-span-2">
-          <iframe
-            src="https://open.spotify.com/embed/track/5r7egnfTIQjaKSGREhIky9?utm_source=generator&theme=0"
-            width="100%"
-            height="100%"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
+        <div className="bg-white/30 backdrop-blur-lg hover:backdrop-blur-2xl duration-500 rounded-2xl w-full h-full p-4 col-span-2">
+          <Link
+            href="mailto:alvinallen333@gmail.com"
+            className="w-full h-full grid place-items-center"
+            target="_blank"
+          >
+            <div className="bg-white p-2 rounded-full scale-100 hover:scale-150 duration-500">
+              <Image
+                src={"/socials/email.svg"}
+                height={50}
+                width={50}
+                alt="GitHub"
+                priority
+                className=""
+              />
+            </div>
+          </Link>
         </div>
         <div className="bg-slate-900  rounded-2xl w-full h-full col-span-2 p-4 grid place-items-center">
           <p className="text-center text-slate-100 text-wrap text-2xl">
