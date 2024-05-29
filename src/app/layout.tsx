@@ -16,7 +16,7 @@ export default function RootLayout({
           
       </head>
       <body className={"bg-black"}>
-        <div className="bg-black overflow-auto">{children}</div>
+        <div className="bg-black">{children}</div>
       </body>
     </html>
   );
