@@ -3,31 +3,30 @@ import React from "react";
 
 import { TypewriterEffect } from "./ui/typewrite_effect";
 import { FlipWords } from "./ui/flipwords";
-import { raleway, caveat } from "@/utils/fonts";
-import { text } from "stream/consumers";
+import { raleway, mono } from "@/utils/fonts";
 import { LampContainer } from "./ui/lamp";
 
 const words = [
   {
     text: "I",
-    className: caveat.className,
+    className: mono.className + " text-2xl lg:text-3xl sm:text-6xl text-3xl",
   },
   {
     text: "am",
-    className: caveat.className,
+    className: mono.className + " text-2xl lg:text-3xl sm:text-6xl text-3xl",
   },
   {
     text: "Alvin",
-    className: caveat.className
+    className: mono.className + " text-2xl lg:text-3xl sm:text-6xl text-3xl",
   },
-  {
-    text: "Ben",
-    className: caveat.className
-  },
-  {
-    text: "George",
-    className: caveat.className
-  },
+  // {
+  //   text: "Ben",
+  //   className: mono.className + " text-2xl lg:text-3xl sm:text-6xl text-3xl",
+  // },
+  // {
+  //   text: "George",
+  //   className: mono.className + " text-2xl lg:text-3xl sm:text-6xl text-3xl",
+  // },
 ].map((word) => {
   return {
     text: word.text,

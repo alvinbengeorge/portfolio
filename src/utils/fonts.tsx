@@ -9,3 +9,11 @@ export const orbitron = localFont({
 export const caveat = localFont({
   src: "../../public/fonts/Caveat-Regular.ttf",
 });
+
+export const monoBold = localFont({
+  src: "../../public/fonts/SpaceMono-BoldItalic.ttf",
+});
+
+export const mono = localFont({
+  src: "../../public/fonts/SpaceMono-Regular.ttf",
+});
