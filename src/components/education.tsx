@@ -1,6 +1,5 @@
 "use client";
-import { raleway } from "@/utils/fonts";
-import { ContainerScroll } from "@/components/ui/container_scroll";
+import { Timeline } from "@/components/ui/timeline";
 import { BackgroundGradient } from "@/components/ui/background_gradient";
 import React from "react";
 
@@ -66,26 +65,28 @@ const Institution = ({
   );
 };
 
+const data = education.map((edu, index) => {
+  return {
+    title: edu.year,
+    content: (
+      <Institution
+        key={index}
+        name={edu.name}
+        year={edu.year}
+        activities={edu.activities}
+      />
+    ),
+  };
+});
+
 export default function Education() {
   return (
-    <div className="grid place-items-center w-full h-full py-8">
-      <h1 className={raleway.className + " text-2xl lg:text-6xl w-full text-center"}>Education</h1>
-      <div
-        className={
-          raleway.className + " grid place-items-center grid-cols-1 gap-4 p-4"
-        }
-      >
-        {education.map((edu, index) => {
-          return (
-            <Institution
-              key={index}
-              name={edu.name}
-              year={edu.year}
-              activities={edu.activities}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <section>
+      <Timeline
+        data={data}
+        title="Education"
+        description="Here's a list of the schools & colleges I have been to. My Education in a nutshell"
+      />
+    </section>
   );
 }
