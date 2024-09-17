@@ -8,7 +8,7 @@ import { FlipWords } from "./ui/flipwords";
 export default function Front() {
   return (
     <section className="p-8 text-white text-6xl rounded-xl">
-      <TextHoverEffect text="Areen" />
+      <TextHoverEffect text="Alvin" />
       <div className="grid place-items-center">
         <FlipWords
           words={["Developer", "Designer", "Creator"]}
