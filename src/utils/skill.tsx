@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Skill = ({ skill }: { skill: string }) => {
   return (
-    <div className="p-2 rounded-full bg-slate-400">
+    <div className="p-2 rounded-2xl bg-white hover:scale-105">
       <Image
         src={`/skills/${skill}.svg`}
         width={40}
@@ -19,8 +19,7 @@ export const Skill = ({ skill }: { skill: string }) => {
 export const Role = ({ role }: { role: string }) => (
   <div
     key={role}
-    className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl"
-  >
+    className="bg-slate-900 flex flex-col place-content-center items-center rounded-xl hover:scale-105">
     <div className="p-4 h-full">
       <Image
         src={"/organization"+role}
