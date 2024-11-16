@@ -28,7 +28,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -134,14 +134,24 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             onClick={scrollLeft}
             disabled={!canScrollLeft}
           >
-            <p>Prev</p>
+            <Image
+              src={"/icons/previous.svg"}
+              alt="Previous"
+              width={24}
+              height={24}
+            />
           </button>
           <button
             className="relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}
           >
-            <p>Next</p>
+            <Image
+              src={"/icons/next.svg"}
+              alt="Next"
+              width={24}
+              height={24}
+            />
           </button>
         </div>
       </div>
@@ -213,7 +223,12 @@ export const Card = ({
                 className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
                 onClick={handleClose}
               >
-                X
+                <Image
+                  src="/icons/close.svg"
+                  alt="Close"
+                  width={24}
+                  height={24}
+                />
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}

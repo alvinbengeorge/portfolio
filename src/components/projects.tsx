@@ -146,6 +146,99 @@ const data = [
       </div>
     ),
   },
+  {
+    title: "FileSync",
+    src: "/projects/Folder.png",
+    content: (
+      <div className="text-white bg-gradient-to-br from-green-700 to-gray-900 grid place-items-center border-white rounded-2xl p-8 text-center">
+        <div className="grid place-items-center grid-cols-1 lg:grid-cols-2 gap-2">
+          <div className="grid place-items-center">
+            <h1 className="font-bold text-center text-2xl">FileSync</h1>
+            <p className="p-0 lg:ps-16 lg:pe-16">
+              FileSync is a simple and easy to use file syncing application like Google Drive and OneDrive, 
+              which is used to manage files remotely in a statically mounted directory
+            </p>
+            <div className="py-2 rounded-xl flex flex-wrap gap-2 place-content-center">
+              {[
+                "nextjs",
+                "python",
+                "fastapi",
+                "github",
+                "git",
+                "cplusplus"
+              ].map((skill, index) => {
+                return <Skill skill={skill} key={index} />;
+              })}
+            </div>
+            <Link
+              href="https://github.com/alvinbengeorge/FileSync/"
+              target="_blank"
+            >
+              <div className="text-white bg-blue-900 w-full text-xl p-4 rounded-full">
+                <h1>🔗 Github</h1>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Image
+              src="/projects/Folder.png"
+              width={400}
+              height={400}
+              alt="Folder Sync"
+              priority={true}
+              className="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Library Management System",
+    src: "/projects/Library.png",
+    content: (
+      <div className="text-white bg-gradient-to-br from-purple-700 to-violet-900 grid place-items-center border-white rounded-2xl p-8 text-center">
+        <div className="grid place-items-center grid-cols-1 lg:grid-cols-2 gap-2">
+          <div className="grid place-items-center">
+            <h1 className="font-bold text-center text-2xl">Library Management System</h1>
+            <p className="p-0 lg:ps-16 lg:pe-16 text-justify">
+              Library Management System is a software built to handle the primary housekeeping functions of a library. 
+              The system helps in keeping track of the faculty's usage of the library and tracking the usage of books in the library
+            </p>
+            <div className="py-2 rounded-xl flex flex-wrap gap-2 place-content-center">
+              {[
+                "nextjs",
+                "python",
+                "fastapi",
+                "github",
+                "git"
+              ].map((skill, index) => {
+                return <Skill skill={skill} key={index} />;
+              })}
+            </div>
+            <Link
+              href="https://github.com/alvinbengeorge/3DUCAT0R5/"
+              target="_blank"
+            >
+              <div className="text-white bg-blue-900 w-full text-xl p-4 rounded-full">
+                <h1>🔗 Github</h1>
+              </div>
+            </Link>
+          </div>
+          <div className="">
+            <Image
+              src="/projects/Library.png"
+              width={400}
+              height={400}
+              alt="Parkinson Disease Watch"
+              priority={true}
+              className="rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    ),
+  },
 ];
 
 export default function Projects() {
