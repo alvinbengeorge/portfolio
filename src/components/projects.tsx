@@ -203,7 +203,7 @@ const data = [
             <h1 className="font-bold text-center text-2xl">Library Management System</h1>
             <p className="p-0 lg:ps-16 lg:pe-16 text-justify">
               Library Management System is a software built to handle the primary housekeeping functions of a library. 
-              The system helps in keeping track of the faculty's usage of the library and tracking the usage of books in the library
+              The system helps in keeping track of the faculty&apos;s usage of the library and tracking the usage of books in the library
             </p>
             <div className="py-2 rounded-xl flex flex-wrap gap-2 place-content-center">
               {[
