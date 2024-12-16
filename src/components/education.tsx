@@ -81,7 +81,7 @@ const data = education.map((edu, index) => {
 
 export default function Education() {
   return (
-    <section>
+    <section id="education">
       <Timeline
         data={data}
         title="Education"
