@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // --- SVG Icons (as components for reusability) ---
 
 const MailIcon = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+  <svg xmlns="http://www.w.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <rect width="20" height="16" x="2" y="4" rx="2" />
     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   </svg>
@@ -33,6 +33,20 @@ const ExternalLinkIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
+const MenuIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+);
+
+const CloseIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+);
 
 // --- Main Portfolio Page Component ---
 
@@ -92,14 +106,14 @@ export default function PortfolioPage() {
             name: "VandeBharat Info",
             description: "Engineered a full-stack application to deliver real-time tracking for the Vande Bharat train service. Designed a dynamic frontend to visualize live data.",
             tags: ["Next.js", "FastAPI", "Real-time Data"],
-            liveUrl: "#",
+            liveUrl: "#", // Add your live URL here
             repoUrl: "#"
         },
         {
             name: "TalkToUrDB",
             description: "Engineered a conversational AI application using the Gemini API to translate natural language queries into executable SQL commands, lowering the technical barrier for database interaction.",
             tags: ["Gemini API", "SQL", "Conversational AI", "Python"],
-            liveUrl: "#",
+            liveUrl: "https://example.com", // Example live URL
             repoUrl: "#"
         },
         {
@@ -120,7 +134,7 @@ export default function PortfolioPage() {
             name: "Campus Web SRM",
             description: "Spearheaded the frontend redesign for a campus web app, improving usability for 5,000+ students by integrating features like calendar and schedule sync.",
             tags: ["Frontend", "React.js", "UI/UX", "JavaScript"],
-            liveUrl: "#",
+            liveUrl: "https://example.com", // Example live URL
             repoUrl: "#"
         },
         {
@@ -163,19 +177,32 @@ export default function PortfolioPage() {
     ]
   };
   
-    const [activeSection, setActiveSection] = useState('experience');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const [activeSection, setActiveSection] = useState('about');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const sectionRefs = {
+        about: useRef(null),
         experience: useRef(null),
         projects: useRef(null),
         achievements: useRef(null),
+        education: useRef(null),
     };
+
+    useEffect(() => {
+        // Enable smooth scrolling for the entire page
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Cleanup function to reset scroll behavior when the component unmounts
+        return () => {
+            document.documentElement.style.scrollBehavior = 'auto';
+        };
+    }, []); // Empty dependency array ensures this runs only once on mount
 
     useEffect(() => {
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.3,
+            threshold: 0.6, // Increased threshold for better accuracy
         };
 
         const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -196,37 +223,95 @@ export default function PortfolioPage() {
         return () => {
             Object.values(sectionRefs).forEach(ref => {
                 if (ref.current) {
+                    // eslint-disable-next-line react-hooks/exhaustive-deps
                     observer.unobserve(ref.current);
                 }
             });
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sectionRefs]);
 
     const navLinks = [
+        { id: 'about', title: 'About' },
         { id: 'experience', title: 'Experience' },
         { id: 'projects', title: 'Projects' },
         { id: 'achievements', title: 'Achievements' },
+        { id: 'education', title: 'Education' },
     ];
 
   // --- JSX Structure ---
   return (
-    <div className="bg-gray-900 text-gray-200 font-sans leading-relaxed">
+    <div className={`bg-gray-900 text-gray-200 font-sans leading-relaxed ${isMenuOpen ? 'overflow-hidden' : ''}`}>
+        
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden fixed top-6 right-6 z-50">
+          <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+              className="p-2 rounded-md bg-gray-800/50 text-white hover:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              aria-label="Toggle menu"
+          >
+              {isMenuOpen ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+          </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`lg:hidden fixed inset-0 bg-gray-900 z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <nav className="flex flex-col items-center justify-center h-full">
+              <ul className="space-y-8 text-center">
+                  {navLinks.map(link => (
+                      <li key={link.id}>
+                          <a 
+                              href={`#${link.id}`} 
+                              onClick={() => setIsMenuOpen(false)}
+                              className="text-2xl font-semibold text-gray-300 hover:text-cyan-400 transition-colors"
+                          >
+                              {link.title}
+                          </a>
+                      </li>
+                  ))}
+              </ul>
+          </nav>
+      </div>
+
       <div className="container mx-auto max-w-7xl px-6 lg:grid lg:grid-cols-3 lg:gap-16">
         
         {/* Left Column: Header, Nav, Socials */}
-        <header className="lg:col-span-1 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:flex-col lg:justify-between lg:py-24">
+        <header className="lg:col-span-1 lg:sticky lg:top-0 lg:max-h-screen lg:py-24">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">{portfolioData.name}</h1>
-            <h2 className="mt-3 text-lg md:text-xl font-medium text-cyan-400">{portfolioData.title}</h2>
-            <p className="mt-4 max-w-xs text-gray-400">{portfolioData.summary}</p>
+            <div className="flex justify-center mb-8">
+               <img src="/photo.jpg" alt="Alvin Ben George" className="rounded-full w-40 h-40 border-2 border-cyan-400 object-cover" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white text-center">{portfolioData.name}</h1>
+            <h2 className="mt-3 text-lg md:text-xl font-medium text-cyan-400 text-center">{portfolioData.title}</h2>
             
+            <div className="flex items-center justify-center space-x-5 mt-8">
+                <a href={`mailto:${portfolioData.email}`} className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                  <span className="sr-only">Email</span>
+                  <MailIcon className="w-6 h-6" />
+                </a>
+                <a href={portfolioData.socials.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                   <span className="sr-only">GitHub</span>
+                  <GithubIcon className="w-6 h-6" />
+                </a>
+                <a href={portfolioData.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                  <span className="sr-only">LinkedIn</span>
+                  <LinkedinIcon className="w-6 h-6" />
+                </a>
+            </div>
+
             <nav className="hidden lg:block mt-12" aria-label="In-page navigation">
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 {navLinks.map(link => (
                   <li key={link.id}>
-                    <a href={`#${link.id}`} className={`group flex items-center py-2 transition-all duration-300`}>
-                      <span className={`mr-4 h-px w-8 bg-gray-500 transition-all duration-300 group-hover:w-16 group-hover:bg-white ${activeSection === link.id ? 'w-16 bg-white' : ''}`}></span>
-                      <span className={`text-xs font-bold uppercase tracking-widest text-gray-500 group-hover:text-white ${activeSection === link.id ? 'text-white' : ''}`}>
+                    <a href={`#${link.id}`} 
+                       className={`group flex items-center py-2 px-4 rounded-full transition-all duration-300
+                       ${activeSection === link.id 
+                         ? 'bg-cyan-900/40 text-cyan-300' 
+                         : 'text-gray-400 hover:text-white hover:bg-gray-800/50'}`
+                       }>
+                      <span className={`w-2 h-2 mr-4 rounded-full transition-all duration-300 
+                          ${activeSection === link.id ? 'bg-cyan-400' : 'bg-gray-600 group-hover:bg-cyan-400'}`}></span>
+                      <span className="text-sm font-medium tracking-wide">
                         {link.title}
                       </span>
                     </a>
@@ -235,25 +320,18 @@ export default function PortfolioPage() {
               </ul>
             </nav>
           </div>
-
-          <div className="flex items-center space-x-5 mt-8 lg:mt-0">
-              <a href={`mailto:${portfolioData.email}`} className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                <span className="sr-only">Email</span>
-                <MailIcon className="w-6 h-6" />
-              </a>
-              <a href={portfolioData.socials.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                 <span className="sr-only">GitHub</span>
-                <GithubIcon className="w-6 h-6" />
-              </a>
-              <a href={portfolioData.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
-                <span className="sr-only">LinkedIn</span>
-                <LinkedinIcon className="w-6 h-6" />
-              </a>
-          </div>
         </header>
 
         {/* Right Column: Main Content */}
         <main className="lg:col-span-2 pt-12 lg:py-24">
+          {/* About Section */}
+          <section id="about" ref={sectionRefs.about} className="mb-16 scroll-mt-24">
+            <h3 className="text-2xl font-bold text-white mb-6 border-b-2 border-cyan-500/30 pb-2">About Me</h3>
+            <p className="text-gray-300 leading-relaxed">
+              {portfolioData.summary}
+            </p>
+          </section>
+
           {/* Experience Section */}
           <section id="experience" ref={sectionRefs.experience} className="mb-16 scroll-mt-24">
             <h3 className="text-2xl font-bold text-white mb-6 border-b-2 border-cyan-500/30 pb-2">Experience & Leadership</h3>
@@ -289,9 +367,11 @@ export default function PortfolioPage() {
                               ))}
                           </div>
                           <div className="flex items-center space-x-4 mt-auto pt-4">
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors duration-300">
-                                  Live Demo <ExternalLinkIcon className="w-4 h-4 ml-1.5" />
-                            </a>
+                            {project.liveUrl && project.liveUrl !== '#' && (
+                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                                      Live Demo <ExternalLinkIcon className="w-4 h-4 ml-1.5" />
+                                </a>
+                            )}
                             <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-300 hover:text-cyan-400 transition-colors duration-300">
                                   Source Code <GithubIcon className="w-4 h-4 ml-1.5" />
                             </a>
@@ -337,7 +417,7 @@ export default function PortfolioPage() {
           </section>
 
           {/* Education Section */}
-          <section id="education" className="mb-16 scroll-mt-24">
+          <section id="education" ref={sectionRefs.education} className="mb-16 scroll-mt-24">
             <h3 className="text-2xl font-bold text-white mb-6 border-b-2 border-cyan-500/30 pb-2">Education</h3>
             <div className="bg-gray-800/50 p-6 rounded-lg shadow-lg">
               <h4 className="text-xl font-semibold text-cyan-400">{portfolioData.education.degree}</h4>
@@ -345,7 +425,7 @@ export default function PortfolioPage() {
               <p className="text-gray-400 text-sm mt-1">{portfolioData.education.period}</p>
             </div>
           </section>
-          
+
           {/* Footer */}
           <footer className="text-center py-6 border-t border-gray-700/50 mt-16">
             <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} {portfolioData.name}. All Rights Reserved.</p>
@@ -355,5 +435,4 @@ export default function PortfolioPage() {
     </div>
   );
 }
-
 
